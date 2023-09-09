@@ -1,10 +1,11 @@
-package ingkells.with.bfsanddfs;
+package ingkells.with.baekjoon.bfsanddfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+// 백준 1260. DFS와 BFS
+public class BOJ1260 {
 
     static StringBuilder sb = new StringBuilder();
     static List<Integer>[] child;

@@ -1,4 +1,4 @@
-package ingkells.with.dfs;
+package ingkells.with.baekjoon.theory.dfs;
 
 import java.util.LinkedList;
 import java.util.Stack;

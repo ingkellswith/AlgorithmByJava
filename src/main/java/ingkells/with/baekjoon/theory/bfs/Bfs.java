@@ -1,4 +1,4 @@
-package ingkells.with.bfs;
+package ingkells.with.baekjoon.theory.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
