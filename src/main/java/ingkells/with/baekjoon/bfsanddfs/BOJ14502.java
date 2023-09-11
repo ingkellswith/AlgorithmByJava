@@ -47,6 +47,12 @@ public class BOJ14502 {
             System.arraycopy(restored[i], 0, original[i], 0, original[i].length);
         }
     }
+
+    public static void restoreBooleanArray(boolean[][] original, boolean[][] restored) {
+        for (int i = 0; i < original.length; i++) {
+            System.arraycopy(restored[i], 0, original[i], 0, original[i].length);
+        }
+    }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -55,6 +61,7 @@ public class BOJ14502 {
         int[][] map = new int[n][m];
         int[][] originalMap = new int[n][m];
         boolean[][] visited = new boolean[n][m];
+        boolean[][] originalVisited = new boolean[n][m];
         int[] elements = new int[n*m];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -62,6 +69,7 @@ public class BOJ14502 {
                 map[i][j] = Integer.parseInt(st.nextToken());
                 originalMap[i][j] = map[i][j];
                 visited[i][j] = false;
+                originalVisited[i][j]=false;
                 elements[i*m+j]=map[i][j];
             }
         }
@@ -74,6 +82,7 @@ public class BOJ14502 {
 
         for (List<Integer> combination : combinations) {
             restoreArray(map, originalMap);
+            restoreBooleanArray(visited, originalVisited);
             int a = combination.get(0);
             int b = combination.get(1);
             int c = combination.get(2);
