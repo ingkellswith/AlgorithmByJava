@@ -33,15 +33,6 @@ public class BOJ14502 {
         }
     }
 
-    public static int[][] deepCopy(int[][] original) {
-        int[][] copy = new int[original.length][];
-        for (int i = 0; i < original.length; i++) {
-            copy[i] = new int[original[i].length];
-            System.arraycopy(original[i], 0, copy[i], 0, original[i].length);
-        }
-        return copy;
-    }
-
     public static void restoreArray(int[][] original, int[][] restored) {
         for (int i = 0; i < original.length; i++) {
             System.arraycopy(restored[i], 0, original[i], 0, original[i].length);
