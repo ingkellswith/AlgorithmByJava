@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Collections;
 
 // 백준 1759. 암호 만들기
 public class BOJ1759 {
@@ -12,6 +11,7 @@ public class BOJ1759 {
     static char[] characters;
     static boolean[] visited;
 
+    // C(숫자)CL(숫자) (조합)을 구현
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] input = br.readLine().split(" ");
