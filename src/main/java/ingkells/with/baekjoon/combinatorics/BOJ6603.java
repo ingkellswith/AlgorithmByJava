@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+// 백준 6603. 로또
 public class BOJ6603 {
     static int[] numbers;
     static int[] result;
