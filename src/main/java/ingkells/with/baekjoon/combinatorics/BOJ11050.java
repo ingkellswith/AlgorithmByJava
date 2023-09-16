@@ -26,6 +26,8 @@ public class BOJ11050 {
         if (k == 0 || k == n) {
             return 1;
         } else {
+        // nCr = n-1Cr-1 + n-1Cr
+        // 챔피언을 뽑는 경우와 그렇지 않은 경우
             return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
         }
     }
