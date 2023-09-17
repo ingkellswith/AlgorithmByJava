@@ -1,13 +1,13 @@
-package ingkells.with.basic;
+package ingkells.with.baekjoon.theory.combinatorics;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Permutation {
+public class PermutationWithRepetition {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4};
-        int r = 2; // 순열의 크기
+        int r = 2; // 중복 순열의 크기
 
         List<List<Integer>> permutations = generatePermutations(arr, r);
 
@@ -29,11 +29,9 @@ public class Permutation {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            if (!current.contains(arr[i])) {
-                current.add(arr[i]);
-                generatePermutations(arr, r, current, result);
-                current.remove(current.size() - 1);
-            }
+            current.add(arr[i]);
+            generatePermutations(arr, r, current, result);
+            current.remove(current.size() - 1);
         }
     }
 }
