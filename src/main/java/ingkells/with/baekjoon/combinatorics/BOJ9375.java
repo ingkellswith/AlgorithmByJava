@@ -22,6 +22,10 @@ public class BOJ9375 {
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 count = count * (entry.getValue()+1);
             }
+// 아래처럼 Entry대신에 keySet 사용도 가능
+//            for (String key : map.keySet()) {
+//                count = count * (map.get(key)+1);
+//            }
             sb.append(count-1 + "\n");
 
         }
