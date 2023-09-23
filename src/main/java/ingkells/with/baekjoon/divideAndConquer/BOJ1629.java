@@ -23,6 +23,7 @@ public class BOJ1629 {
         System.out.println(pow(A, B));
     }
 
+    // 전체 풀이 : https://st-lab.tistory.com/237
     // A^exponent
     public static long pow(long A, long exponent) {
 
