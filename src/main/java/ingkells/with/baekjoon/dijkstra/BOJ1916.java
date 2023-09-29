@@ -78,14 +78,13 @@ public class BOJ1916 {
             Node curNode = pq.poll();
             int cur = curNode.end;
 
-            if (!check[cur]) {
-                check[cur] = true;
+            if(check[cur] == true) continue;
+            check[cur] = true;
 
-                for (Node node : a.get(cur)) {
-                    if (!check[node.end] && dist[node.end] > dist[cur] + node.weight) {
-                        dist[node.end] = dist[cur] + node.weight;
-                        pq.add(new Node(node.end, dist[node.end]));
-                    }
+            for (Node node : a.get(cur)) {
+                if (dist[node.end] > dist[cur] + node.weight) {
+                    dist[node.end] = dist[cur] + node.weight;
+                    pq.add(new Node(node.end, dist[node.end]));
                 }
             }
         }

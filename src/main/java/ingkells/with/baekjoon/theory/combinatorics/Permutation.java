@@ -4,36 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutation {
-
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4};
-        int r = 2; // 순열의 크기
+        int[] elements = {1, 2, 3, 4, 5};
+        int r = 3; // 뽑을 요소의 수
+        List<List<Integer>> permutations = generatePermutations(elements, r);
 
-        List<List<Integer>> permutations = generatePermutations(arr, r);
-
+        // 생성된 순열 출력
         for (List<Integer> permutation : permutations) {
             System.out.println(permutation);
         }
     }
 
-    public static List<List<Integer>> generatePermutations(int[] arr, int r) {
+    public static List<List<Integer>> generatePermutations(int[] elements, int r) {
         List<List<Integer>> result = new ArrayList<>();
-        generatePermutations(arr, r, new ArrayList<>(), result);
+        generatePermutationsHelper(elements, r, new ArrayList<>(), result);
         return result;
     }
 
-    private static void generatePermutations(int[] arr, int r, List<Integer> current, List<List<Integer>> result) {
-        if (current.size() == r) {
-            result.add(new ArrayList<>(current));
+    private static void generatePermutationsHelper(int[] elements, int r, List<Integer> currentPermutation, List<List<Integer>> result) {
+        if (currentPermutation.size() == r) {
+            result.add(new ArrayList<>(currentPermutation));
             return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (!current.contains(arr[i])) {
-                current.add(arr[i]);
-                generatePermutations(arr, r, current, result);
-                current.remove(current.size() - 1);
+        for (int i = 0; i < elements.length; i++) {
+            if (!currentPermutation.contains(elements[i])) {
+                currentPermutation.add(elements[i]);
+                generatePermutationsHelper(elements, r, currentPermutation, result);
+                currentPermutation.remove(currentPermutation.size() - 1);
             }
         }
     }
 }
+
+
+
+
+
